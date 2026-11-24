@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>青苗学堂 · 唐山八年级学习助手</title>
+<meta name="description" content="面向河北唐山八年级学生的学科要点、强化练习、错题订正与资料同步工具" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============ 侧边栏 ============ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="32" height="32">
+          <rect x="1" y="1" width="30" height="30" rx="9" fill="#6E8FB2"/>
+          <path d="M16 24V13" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M16 13c0-5 3.6-7.2 8-7.4.3 4.4-2.4 8-8 8.2z" fill="#DCE8F3"/>
+          <path d="M16 16.4c0-3.8-2.8-5.6-6.4-5.8-.2 3.5 1.9 6.3 6.4 6.5z" fill="#C3D7E8"/>
+        </svg>
+      </div>
+      <div class="brand-txt">
+        <h1>青苗学堂</h1>
+        <p>唐山 · 八年级</p>
+      </div>
+    </div>
+
+    <nav class="nav" id="nav">
+      <button class="nav-item is-active" data-view="points">
+        <span class="nav-ico">◆</span><span>要点精讲</span>
+      </button>
+      <button class="nav-item" data-view="practice">
+        <span class="nav-ico">✎</span><span>强化练习</span>
+      </button>
+      <button class="nav-item" data-view="wrong">
+        <span class="nav-ico">✱</span><span>错题本</span>
+        <em class="nav-badge" id="wrongBadge" hidden>0</em>
+      </button>
+      <button class="nav-item" data-view="settings">
+        <span class="nav-ico">⚙</span><span>设置中心</span>
+      </button>
+    </nav>
+
+    <div class="side-card">
+      <div class="side-card-top">
+        <span class="dot"></span><span id="syncStateText">资料库已就绪</span>
+      </div>
+      <p class="side-card-sub" id="syncStateSub">人教版八上 · 7 学科 · 本地缓存</p>
+      <div class="progress-thin"><i id="syncMiniBar" style="width:100%"></i></div>
+    </div>
+
+    <div class="side-foot">
+      <span id="footVersion">v1.0</span>
+      <span>唐山 · 冀东版教材适配</span>
+    </div>
+  </aside>
+
+  <!-- ============ 主区域 ============ -->
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn only-mobile" id="menuBtn" aria-label="菜单">☰</button>
+
+      <div class="subject-bar" id="subjectBar"></div>
+
+      <div class="topbar-right">
+        <div class="focus-timer" id="focusTimer" title="专注计时">
+          <span class="ft-label">专注</span>
+          <strong id="focusClock">00:00</strong>
+          <button class="ft-btn" id="focusToggle" aria-label="开始计时">▶</button>
+        </div>
+        <div class="coin-chip" id="coinChip" title="积分">
+          <span class="coin-ico">★</span>
+          <strong id="coinNum">0</strong>
+          <span class="coin-lv" id="coinLv">学芽</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="view" id="view"><!-- 动态渲染 --></main>
+  </div>
+</div>
+
+<!-- 模态框 -->
+<div class="modal-mask" id="modalMask" hidden>
+  <div class="modal" id="modalBox" role="dialog" aria-modal="true"></div>
+</div>
+
+<!-- 打印区域 -->
+<div class="print-area" id="printArea"></div>
+
+<!-- 轻提示 -->
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script src="assets/js/figures.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/bank.js"></script>
+<script src="assets/js/bank2.js"></script>
+<script src="assets/js/bank3.js"></script>
+<script src="assets/js/bank4.js"></script>
+<script src="assets/js/exam.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
